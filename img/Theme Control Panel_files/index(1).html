@@ -1,0 +1,708 @@
+<!DOCTYPE html>
+<!-- saved from url=(0104)http://localhost/admin/index.php?route=module/pavsliderlayer&id=1&token=6d88ac48fa2197331402304a0eeb329a -->
+<html dir="ltr" lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="UTF-8">
+<title>Pav Layers Sliders</title>
+<!--<base href="http://localhost/admin/">--><base href=".">
+<link rel="stylesheet" type="text/css" href="stylesheet.css">
+<link rel="stylesheet" type="text/css" href="style.css" media="screen">
+<script type="text/javascript" src="jquery-1.7.1.min.js"></script>
+<script type="text/javascript" src="jquery-ui-1.8.16.custom.min.js"></script>
+<link type="text/css" href="jquery-ui-1.8.16.custom.css" rel="stylesheet">
+<script type="text/javascript" src="tabs.js"></script>
+<script type="text/javascript" src="superfish.js"></script>
+<script type="text/javascript" src="common.js"></script>
+<script type="text/javascript" src="script.js"></script>
+<script type="text/javascript" src="jquery-cookie.js"></script>
+<script type="text/javascript">
+//-----------------------------------------
+// Confirm Actions (delete, uninstall)
+//-----------------------------------------
+$(document).ready(function(){
+    // Confirm Delete
+    $('#form').submit(function(){
+        if ($(this).attr('action').indexOf('delete',1) != -1) {
+            if (!confirm('Delete/Uninstall cannot be undone! Are you sure you want to do this?')) {
+                return false;
+            }
+        }
+    });
+    // Confirm Uninstall
+    $('a').click(function(){
+        if ($(this).attr('href') != null && $(this).attr('href').indexOf('uninstall', 1) != -1) {
+            if (!confirm('Delete/Uninstall cannot be undone! Are you sure you want to do this?')) {
+                return false;
+            }
+        }
+    });
+        });
+    </script>
+<style type="text/css"></style></head>
+<body>
+<div id="container">
+    <div id="header" style="display: none;">
+  <div class="div1">
+    <div class="div2"><img src="logo.png" title="Administration" onclick="location = &#39;http://localhost/admin/index.php?route=common/home&amp;token=6d88ac48fa2197331402304a0eeb329a&#39;"></div>
+        <div class="div3"><img src="lock.png" alt="" style="position: relative; top: 3px;">&nbsp;You are logged in as <span>goobadmin</span></div>
+      </div>
+    <div id="menu" style="display: none;">
+    <ul class="left sf-js-enabled" style="display: block;">
+      <li id="dashboard"><a href="http://localhost/admin/index.php?route=common/home&token=6d88ac48fa2197331402304a0eeb329a" class="top">Dashboard</a></li>
+      <li id="catalog"><a class="top">Catalog</a>
+        <ul style="display: none; visibility: hidden;">
+          <li><a href="http://localhost/admin/index.php?route=catalog/category&token=6d88ac48fa2197331402304a0eeb329a">Categories</a></li>
+          <li><a href="http://localhost/admin/index.php?route=catalog/product&token=6d88ac48fa2197331402304a0eeb329a">Products</a></li>
+          <li><a href="http://localhost/admin/index.php?route=catalog/filter&token=6d88ac48fa2197331402304a0eeb329a">Filters</a></li>
+          <li><a href="http://localhost/admin/index.php?route=catalog/profile&token=6d88ac48fa2197331402304a0eeb329a">Profiles</a></li>
+          <li><a class="parent">Attributes</a>
+            <ul style="display: none; visibility: hidden;">
+              <li><a href="http://localhost/admin/index.php?route=catalog/attribute&token=6d88ac48fa2197331402304a0eeb329a">Attributes</a></li>
+              <li><a href="http://localhost/admin/index.php?route=catalog/attribute_group&token=6d88ac48fa2197331402304a0eeb329a">Attribute Groups</a></li>
+            </ul>
+          </li>
+          <li><a href="http://localhost/admin/index.php?route=catalog/option&token=6d88ac48fa2197331402304a0eeb329a">Options</a></li>
+          <li><a href="http://localhost/admin/index.php?route=catalog/manufacturer&token=6d88ac48fa2197331402304a0eeb329a">Manufacturers</a></li>
+          <li><a href="http://localhost/admin/index.php?route=catalog/download&token=6d88ac48fa2197331402304a0eeb329a">Downloads</a></li>
+          <li><a href="http://localhost/admin/index.php?route=catalog/review&token=6d88ac48fa2197331402304a0eeb329a">Reviews</a></li>
+          <li><a href="http://localhost/admin/index.php?route=catalog/information&token=6d88ac48fa2197331402304a0eeb329a">Information</a></li>
+        </ul>
+      </li>
+      <li id="extension"><a class="top">Extensions</a>
+        <ul style="display: none; visibility: hidden;">
+          <li><a href="http://localhost/admin/index.php?route=extension/module&token=6d88ac48fa2197331402304a0eeb329a">Modules</a></li>
+          <li><a href="http://localhost/admin/index.php?route=extension/shipping&token=6d88ac48fa2197331402304a0eeb329a">Shipping</a></li>
+          <li><a href="http://localhost/admin/index.php?route=extension/payment&token=6d88ac48fa2197331402304a0eeb329a">Payments</a></li>
+          <li><a href="http://localhost/admin/index.php?route=extension/total&token=6d88ac48fa2197331402304a0eeb329a">Order Totals</a></li>
+          <li><a href="http://localhost/admin/index.php?route=extension/feed&token=6d88ac48fa2197331402304a0eeb329a">Product Feeds</a></li>
+                  </ul>
+      </li>
+      <li id="sale"><a class="top">Sales</a>
+        <ul style="display: none; visibility: hidden;">
+          <li><a href="http://localhost/admin/index.php?route=sale/order&token=6d88ac48fa2197331402304a0eeb329a">Orders</a></li>
+          <li><a href="http://localhost/admin/index.php?route=sale/recurring&token=6d88ac48fa2197331402304a0eeb329a">Recurring Profiles</a></li>
+          <li><a href="http://localhost/admin/index.php?route=sale/return&token=6d88ac48fa2197331402304a0eeb329a">Returns</a></li>
+          <li><a class="parent">Customers</a>
+            <ul style="display: none; visibility: hidden;">
+              <li><a href="http://localhost/admin/index.php?route=sale/customer&token=6d88ac48fa2197331402304a0eeb329a">Customers</a></li>
+              <li><a href="http://localhost/admin/index.php?route=sale/customer_group&token=6d88ac48fa2197331402304a0eeb329a">Customer Groups</a></li>
+              <li><a href="http://localhost/admin/index.php?route=sale/customer_ban_ip&token=6d88ac48fa2197331402304a0eeb329a">Banned IP</a></li>
+            </ul>
+          </li>
+          <li><a href="http://localhost/admin/index.php?route=sale/affiliate&token=6d88ac48fa2197331402304a0eeb329a">Affiliates</a></li>
+          <li><a href="http://localhost/admin/index.php?route=sale/coupon&token=6d88ac48fa2197331402304a0eeb329a">Coupons</a></li>
+          <li><a class="parent">Gift Vouchers</a>
+            <ul style="display: none; visibility: hidden;">
+              <li><a href="http://localhost/admin/index.php?route=sale/voucher&token=6d88ac48fa2197331402304a0eeb329a">Gift Vouchers</a></li>
+              <li><a href="http://localhost/admin/index.php?route=sale/voucher_theme&token=6d88ac48fa2197331402304a0eeb329a">Voucher Themes</a></li>
+            </ul>
+          </li>
+          <!-- PAYPAL MANAGE NAVIGATION LINK -->
+                    <!-- PAYPAL MANAGE NAVIGATION LINK END -->
+          <li><a href="http://localhost/admin/index.php?route=sale/contact&token=6d88ac48fa2197331402304a0eeb329a">Mail</a></li>
+        </ul>
+      </li>
+      <li id="system"><a class="top">System</a>
+        <ul style="display: none; visibility: hidden;">
+          <li><a href="http://localhost/admin/index.php?route=setting/store&token=6d88ac48fa2197331402304a0eeb329a">Settings</a></li>
+          <li><a class="parent">Design</a>
+            <ul style="display: none; visibility: hidden;">
+              <li><a href="http://localhost/admin/index.php?route=design/layout&token=6d88ac48fa2197331402304a0eeb329a">Layouts</a></li>
+              <li><a href="http://localhost/admin/index.php?route=design/banner&token=6d88ac48fa2197331402304a0eeb329a">Banners</a></li>
+            </ul>
+          </li>
+          <li><a class="parent">Users</a>
+            <ul style="display: none; visibility: hidden;">
+              <li><a href="http://localhost/admin/index.php?route=user/user&token=6d88ac48fa2197331402304a0eeb329a">Users</a></li>
+              <li><a href="http://localhost/admin/index.php?route=user/user_permission&token=6d88ac48fa2197331402304a0eeb329a">User Groups</a></li>
+            </ul>
+          </li>
+          <li><a class="parent">Localisation</a>
+            <ul style="display: none; visibility: hidden;">
+              <li><a href="http://localhost/admin/index.php?route=localisation/language&token=6d88ac48fa2197331402304a0eeb329a">Languages</a></li>
+              <li><a href="http://localhost/admin/index.php?route=localisation/currency&token=6d88ac48fa2197331402304a0eeb329a">Currencies</a></li>
+              <li><a href="http://localhost/admin/index.php?route=localisation/stock_status&token=6d88ac48fa2197331402304a0eeb329a">Stock Statuses</a></li>
+              <li><a href="http://localhost/admin/index.php?route=localisation/order_status&token=6d88ac48fa2197331402304a0eeb329a">Order Statuses</a></li>
+              <li><a class="parent">Returns</a>
+                <ul style="display: none; visibility: hidden;">
+                  <li><a href="http://localhost/admin/index.php?route=localisation/return_status&token=6d88ac48fa2197331402304a0eeb329a">Return Statuses</a></li>
+                  <li><a href="http://localhost/admin/index.php?route=localisation/return_action&token=6d88ac48fa2197331402304a0eeb329a">Return Actions</a></li>
+                  <li><a href="http://localhost/admin/index.php?route=localisation/return_reason&token=6d88ac48fa2197331402304a0eeb329a">Return Reasons</a></li>
+                </ul>
+              </li>
+              <li><a href="http://localhost/admin/index.php?route=localisation/country&token=6d88ac48fa2197331402304a0eeb329a">Countries</a></li>
+              <li><a href="http://localhost/admin/index.php?route=localisation/zone&token=6d88ac48fa2197331402304a0eeb329a">Zones</a></li>
+              <li><a href="http://localhost/admin/index.php?route=localisation/geo_zone&token=6d88ac48fa2197331402304a0eeb329a">Geo Zones</a></li>
+              <li><a class="parent">Taxes</a>
+                <ul style="display: none; visibility: hidden;">
+                  <li><a href="http://localhost/admin/index.php?route=localisation/tax_class&token=6d88ac48fa2197331402304a0eeb329a">Tax Classes</a></li>
+                  <li><a href="http://localhost/admin/index.php?route=localisation/tax_rate&token=6d88ac48fa2197331402304a0eeb329a">Tax Rates</a></li>
+                </ul>
+              </li>
+              <li><a href="http://localhost/admin/index.php?route=localisation/length_class&token=6d88ac48fa2197331402304a0eeb329a">Length Classes</a></li>
+              <li><a href="http://localhost/admin/index.php?route=localisation/weight_class&token=6d88ac48fa2197331402304a0eeb329a">Weight Classes</a></li>
+            </ul>
+          </li>
+          <li><a href="http://localhost/admin/index.php?route=tool/error_log&token=6d88ac48fa2197331402304a0eeb329a">Error Logs</a></li>
+          <li><a href="http://localhost/admin/index.php?route=tool/backup&token=6d88ac48fa2197331402304a0eeb329a">Backup / Restore</a></li>
+        </ul>
+      </li>
+      <li id="reports"><a class="top">Reports</a>
+        <ul style="display: none; visibility: hidden;">
+          <li><a class="parent">Sales</a>
+            <ul style="display: none; visibility: hidden;">
+              <li><a href="http://localhost/admin/index.php?route=report/sale_order&token=6d88ac48fa2197331402304a0eeb329a">Orders</a></li>
+              <li><a href="http://localhost/admin/index.php?route=report/sale_tax&token=6d88ac48fa2197331402304a0eeb329a">Tax</a></li>
+              <li><a href="http://localhost/admin/index.php?route=report/sale_shipping&token=6d88ac48fa2197331402304a0eeb329a">Shipping</a></li>
+              <li><a href="http://localhost/admin/index.php?route=report/sale_return&token=6d88ac48fa2197331402304a0eeb329a">Returns</a></li>
+              <li><a href="http://localhost/admin/index.php?route=report/sale_coupon&token=6d88ac48fa2197331402304a0eeb329a">Coupons</a></li>
+            </ul>
+          </li>
+          <li><a class="parent">Products</a>
+            <ul style="display: none; visibility: hidden;">
+              <li><a href="http://localhost/admin/index.php?route=report/product_viewed&token=6d88ac48fa2197331402304a0eeb329a">Viewed</a></li>
+              <li><a href="http://localhost/admin/index.php?route=report/product_purchased&token=6d88ac48fa2197331402304a0eeb329a">Purchased</a></li>
+            </ul>
+          </li>
+          <li><a class="parent">Customers</a>
+            <ul style="display: none; visibility: hidden;">
+              <li><a href="http://localhost/admin/index.php?route=report/customer_online&token=6d88ac48fa2197331402304a0eeb329a">Customers Online</a></li>
+              <li><a href="http://localhost/admin/index.php?route=report/customer_order&token=6d88ac48fa2197331402304a0eeb329a">Orders</a></li>
+              <li><a href="http://localhost/admin/index.php?route=report/customer_reward&token=6d88ac48fa2197331402304a0eeb329a">Reward Points</a></li>
+              <li><a href="http://localhost/admin/index.php?route=report/customer_credit&token=6d88ac48fa2197331402304a0eeb329a">Credit</a></li>
+            </ul>
+          </li>
+          <li><a class="parent">Affiliates</a>
+            <ul style="display: none; visibility: hidden;">
+              <li><a href="http://localhost/admin/index.php?route=report/affiliate_commission&token=6d88ac48fa2197331402304a0eeb329a">Commission</a></li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+      <li id="help"><a class="top">Help</a>
+        <ul style="display: none; visibility: hidden;">
+          <li><a href="http://www.opencart.com/" target="_blank">Homepage</a></li>
+          <li><a href="http://www.opencart.com/index.php?route=documentation/introduction" target="_blank">Documentation</a></li>
+          <li><a href="http://forum.opencart.com/" target="_blank">Support Forum</a></li>
+        </ul>
+      </li>
+    </ul>
+    <ul class="right sf-js-enabled" style="display: block;">
+      <li id="store"><a href="http://localhost/" target="_blank" class="top">Store Front</a>
+        <ul style="display: none; visibility: hidden;">
+                  </ul>
+      </li>
+      <li><a class="top" href="http://localhost/admin/index.php?route=common/logout&token=6d88ac48fa2197331402304a0eeb329a">Logout</a></li>
+    </ul>
+  </div>
+  </div>
+<div id="content">
+  <div class="breadcrumb" style="display: none;">
+        <a href="http://localhost/admin/index.php?route=common/home&token=6d88ac48fa2197331402304a0eeb329a">Home</a>
+         :: <a href="http://localhost/admin/index.php?route=extension/module&token=6d88ac48fa2197331402304a0eeb329a">Modules</a>
+         :: <a href="http://localhost/admin/index.php?route=module/pavsliderlayer&token=6d88ac48fa2197331402304a0eeb329a">Pav Layers Sliders</a>
+      </div>
+      <div class="box">
+    <div class="heading">
+      <h1><img src="module.png" alt=""> Pav Layers Sliders</h1>
+      <div class="buttons pull-right">
+                <a onclick="$(&#39;#form&#39;).submit();" class="button">Save All And Edit Group</a>
+                <a onclick="$(&#39;#action_mode&#39;).val(&#39;create-new&#39;);$(&#39;#form&#39;).submit();" class="button">Save All And Create New Group</a>
+                <a onclick="$(&#39;#action_mode&#39;).val(&#39;module-only&#39;);$(&#39;#form&#39;).submit();" class="button grey">Save Modules Only</a>
+                <a href="http://localhost/admin/index.php?route=extension/module&token=6d88ac48fa2197331402304a0eeb329a" class="button">Cancel</a>
+            </div>
+
+    </div>
+    <div class="page-content">
+     <form action="http://localhost/admin/index.php?route=module/pavsliderlayer&token=6d88ac48fa2197331402304a0eeb329a" method="post" enctype="multipart/form-data" id="form">
+            <div class="htabs" id="tabs-modules">
+                <a href="http://localhost/admin/#tab-slidergroups" class="selected" style="display: inline;">Slider Groups Management</a>
+                <a href="http://localhost/admin/#tab-listmodules" style="display: inline;">Modules Asignment</a>
+                <a href="http://localhost/admin/#tab-importtools" style="display: inline;">Import Tools</a>
+            </div>
+
+            <div id="tab-listmodules" style="display: none;">
+                    <label style="font-weight: bold;color:red">Filter By Store: </label>
+                    <select id="pavstores">
+                                                                  <option value="0" selected="selected">Goob Cases (Default)</option>
+                                                                </select>
+                    <input type="hidden" value="0" name="pavsliderlayer_module[store_id]"><br><br>
+                    <table id="module" class="list">
+                              <thead>
+                                <tr>
+                                  <td class="left">Banner:</td>
+                                  <td class="left">Layout:</td>
+                                  <td class="left">Position:</td>
+                                  <td class="left">Status:</td>
+                                  <td class="right">Sort Order:</td>
+                                  <td></td>
+                                </tr>
+                              </thead>
+                                                                                          <tbody id="module-row0">
+                                <tr>
+                                  <td class="left"><select name="pavsliderlayer_module[0][group_id]">
+                                                                                                                 <option value="1" selected="selected">Fox slider</option>
+                                                                                                                </select></td>
+                                  
+                                  <td class="left">
+                                    <select name="pavsliderlayer_module[0][layout_id]">
+                                                                                                                  <option value="99999">All Page</option>
+                                                                                                                                                        <option value="6">Account</option>
+                                                                                                                                                        <option value="10">Affiliate</option>
+                                                                                                                                                        <option value="3">Category</option>
+                                                                                                                                                        <option value="7">Checkout</option>
+                                                                                                                                                        <option value="8">Contact</option>
+                                                                                                                                                        <option value="4">Default</option>
+                                                                                                                                                        <option value="1" selected="selected">Home</option>
+                                                                                                                                                        <option value="11">Information</option>
+                                                                                                                                                        <option value="5">Manufacturer</option>
+                                                                                                                                                        <option value="12">Pav Blog</option>
+                                                                                                                                                        <option value="15">Pavdeal</option>
+                                                                                                                                                        <option value="2">Product</option>
+                                                                                                                                                        <option value="14">Search</option>
+                                                                                                                                                        <option value="9">Sitemap</option>
+                                                                                                                                                        <option value="13">Specials</option>
+                                                                                                                </select></td>
+                                  <td class="left"><select name="pavsliderlayer_module[0][position]">
+                                                                            <option value="content_top">Content Top</option>
+                                                                                                                  <option value="content_bottom">Content Bottom</option>
+                                                                                                                  <option value="column_left">Column Left</option>
+                                                                                                                  <option value="column_right">Column Right</option>
+                                      
+                                                                            <option value="mainmenu">Main Menu</option>
+                                      
+                                                                            <option value="slideshow" selected="selected">Slideshow</option>
+                                      
+                                                                            <option value="promotion">Promotion</option>
+                                      
+                                                                            <option value="footer_top">Footer Top</option>
+                                      
+                                                                            <option value="footer_center">Footer Center</option>
+                                                                            
+                                                                            <option value="footer_bottom">Footer Bottom</option>
+                                                                            
+                                    </select></td>
+                                  <td class="left"><select name="pavsliderlayer_module[0][status]">
+                                                                            <option value="1" selected="selected">Enabled</option>
+                                      <option value="0">Disabled</option>
+                                                                          </select></td>
+                                  <td class="right"><input type="text" name="pavsliderlayer_module[0][sort_order]" value="1" size="3"></td>
+                                  <td class="left"><a onclick="$(&#39;#module-row0&#39;).remove();" class="button">Remove</a></td>
+                                </tr>
+                              </tbody>
+                                                                                          <tfoot>
+                                <tr>
+                                  <td colspan="5"></td>
+                                  <td class="left"><a onclick="addModule();" class="button">Add Module</a></td>
+                                </tr>
+                              </tfoot>
+                            </table>
+
+            </div>
+            
+    
+     <div id="tab-slidergroups" style="display: block;">
+            
+     
+        <input type="hidden" name="action_mode" id="action_mode">
+        <div class="groups">
+                <h4>Slider Groups</h4>
+                <ul>
+                     <li>    
+                    <a class="active" href="index(1).html">Fox slider                        <span>(ID:1)</span>
+                    </a> 
+
+
+                    </li>
+                                    </ul>
+        </div>  
+        <div class="group-form">
+            <h4>Slider Group Form
+                                        Edit <span>Fox slider</span>
+                                </h4>
+            <table class="form">
+                <tbody><tr>
+                    <td>ID: 1                        <input type="hidden" name="id" value="1"> 
+                    </td>
+                    <td>
+                           
+                        <div class="buttons">
+                            
+                            <a id="btn-preview-ingroup" href="http://localhost/admin/index.php?route=module/pavsliderlayer/preview&id=1&token=6d88ac48fa2197331402304a0eeb329a" class="button grey">Preview Sliders In Group</a>
+
+                            <a href="http://localhost/admin/index.php?route=module/pavsliderlayer/layer&group_id=1&token=6d88ac48fa2197331402304a0eeb329a" class="btn btn-green" id="preview-sliders">Manages Sliders</a>
+
+                            <a href="http://localhost/admin/index.php?route=module/pavsliderlayer/delete&id=1&token=6d88ac48fa2197331402304a0eeb329a" onclick="return confirm(&#39;Are you sure to delete this&#39;);" class="btn " id="preview-sliders">
+                                Delete                            </a>
+
+
+                            <a href="http://localhost/admin/index.php?route=module/pavsliderlayer/export&id=1&token=6d88ac48fa2197331402304a0eeb329a" class="btn orange" id="preview-sliders">
+                                Export Group And Sliders                            </a>
+                        </div>  
+                                            </td>   
+                </tr><tr>
+                </tr><tr>
+                    <td>Slide Group Title
+                     </td><td><input type="text" name="slider[title]" value="Fox slider"></td>
+                </tr>
+                <tr>
+                    <td>Delay</td>
+                    <td><input type="text" name="slider[delay]" value="6000"></td>
+                </tr>
+                <tr>
+                    <td>FullWidth Mode</td>
+                    <td>
+                        <select name="slider[fullwidth]">
+                                                        <option value="">Boxed</option>
+                                                         <option value="fullwidth" selected="selected">Fullwidth</option>
+                                                         <option value="fullscreen">Fullscreen</option>
+                                                         
+                        </select>   
+                    </td>
+                </tr>
+                <tr>
+                    <td>Start Slider Demension</td>
+                    <td>
+                        <label>Width</label>
+                        <input type="text" name="slider[width]" value="1170">
+                        <label>Height</label>
+                        <input type="text" name="slider[height]" value="600">
+                    </td>
+                </tr>
+                <tr>
+                    <td>Touch Mobile</td>
+                    <td>    
+                        <select name="slider[touch_mobile]">
+                                                        <option value="1" selected="selected">Yes</option>
+                                                         <option value="0">No</option>
+                                                         
+                        </select>   
+                    </td>
+                </tr>
+                <tr>
+                    <td>Stop On Hover</td>
+                    <td>
+                        <select name="slider[stop_on_hover]">
+                                                        <option value="1" selected="selected">Yes</option>
+                                                         <option value="0">No</option>
+                              
+                        </select>   
+                    </td>
+                </tr>
+                <tr>
+                    <td>Shuffle Mode</td>
+                    <td>
+                        <select name="slider[shuffle_mode]">
+                                                        <option value="1">Yes</option>
+                                                         <option value="0" selected="selected">No</option>
+                              
+                        </select>   
+                    </td>
+                </tr>
+                <tr>
+                    <td>Image Cropping</td>
+                    <td>
+                        <select name="slider[image_cropping]">
+                                                        <option value="1">Yes</option>
+                                                         <option value="0" selected="selected">No</option>
+                              
+                        </select>   
+                    </td>
+                </tr>
+            </tbody></table> 
+            <h4>Image Cropping</h4>
+            <table class="form">
+                <tbody><tr>
+                    <td>Shadow Type
+                     </td><td>
+                        <select name="slider[shadow_type]">
+                                                        <option value="0" selected="selected">No Shadow</option>
+                                                         <option value="1">1</option>
+                                                         <option value="2">2</option>
+                                                         <option value="3">3</option>
+                              
+                        </select>   
+                     </td>
+                </tr>
+                <tr>
+                    <td>Show Time Line</td>
+                    <td>
+                        <select name="slider[show_time_line]">
+                                                        <option value="1" selected="selected">Yes</option>
+                                                         <option value="0">No</option>
+                              
+                        </select>   
+                    </td>
+                </tr>
+                <tr>
+                    <td>Time Liner Position</td>
+                    <td>
+                        <select name="slider[time_line_position]">
+                                                        <option value="bottom" selected="selected">Bottom</option>
+                                                         <option value="top">Top</option>
+                              
+                        </select>   
+                    </td>
+                </tr>
+                <tr>
+                    <td>Background Color</td>
+                    <td>
+                        <input type="text" name="slider[background_color]" value="">      
+                         
+                    </td>
+                </tr>
+                <tr>
+                    <td>Margin</td>
+                    <td>
+                        <input type="text" name="slider[margin]" value="0"> Example: 5px 0; or 5px 10px 20px
+                     
+                    </td>
+                </tr>
+                <tr>
+                    <td>Padding(border)</td>
+                    <td>
+                        <input type="text" name="slider[padding]" value="0"> Example: 5px 0; or 5px 10px 20px
+                     
+                    </td>
+                </tr>
+                <tr>
+                    <td>Show Background Image</td>
+                    <td>
+                        <select name="slider[background_image]">
+                                                        <option value="1">Yes</option>
+                                                         <option value="0" selected="selected">No</option>
+                              
+                        </select>   
+                    </td>
+                </tr>
+                <tr>
+                    <td>Background URL</td>
+                    <td>
+                        <input type="text" value="" name="slider[background_url]">
+                             
+                    </td>
+                </tr>
+                
+            </tbody></table> 
+            <h4>Navigator</h4>
+            <table class="form">
+                <tbody><tr>
+                    <td>Navigator Type
+                     </td><td>
+                        <select name="slider[navigator_type]">
+                                                        <option value="none" selected="selected"> --- None --- </option>
+                                                         <option value="bullet">Bullet</option>
+                                                         <option value="thumb">Thumbnail</option>
+                                                         <option value="both">Both</option>
+                              
+                        </select>   
+                     </td>
+                </tr>
+                <tr>
+                    <td>Arrows</td>
+                    <td>
+                        <select name="slider[navigator_arrows]">
+                                                        <option value="none"> --- None --- </option>
+                                                         <option value="nexttobullets">Next To Bullets</option>
+                                                         <option value="verticalcentered" selected="selected">Vertical Colorentered</option>
+                              
+                        </select>   
+                    </td>
+                </tr>
+                <tr>
+                    <td>Style</td>
+                    <td>
+                        <select name="slider[navigation_style]">
+                                                        <option value="round" selected="selected">Round</option>
+                                                         <option value="navbar">NavBar</option>
+                                                         <option value="round-old">Round Old</option>
+                                                         <option value="square-old">Square Old</option>
+                                                         <option value="navbar-old">Navbar Old</option>
+                              
+                        </select>   
+                    </td>
+                </tr>
+                <tr>
+                    <td>Offset Horizontal</td>
+                    <td><input type="text" value="0" name="slider[offset_horizontal]"></td>
+                </tr>
+                <tr>
+                    <td>Offset Vertical</td>
+                    <td><input type="text" value="20" name="slider[offset_vertical]"></td>
+                </tr>
+                <tr>
+                    <td>Always Show Navigator</td>
+                    <td>
+                        <select name="slider[show_navigator]">
+                                                        <option value="1" selected="selected">Yes</option>
+                                                         <option value="0">No</option>
+                              
+                        </select>   
+                    </td>
+                </tr>
+                <tr>
+                    <td>Hide Navigator After</td>
+                    <td><input type="text" value="200" name="slider[hide_navigator_after]"></td>
+                </tr>   
+            </tbody></table> 
+            <h4>Thumbnails</h4>
+            <table class="form">
+                 
+                <tbody><tr>
+                    <td>Thumbnail Width</td>
+                    <td>
+                        <input type="text" value="100" name="slider[thumbnail_width]">
+                    </td>
+                </tr>
+                <tr>
+                    <td>Thumbnail Height </td>
+                    <td>
+                        <input type="text" value="50" name="slider[thumbnail_height]">
+                    </td>
+                </tr>
+                <tr>
+                    <td>Number of Thumbnails </td>
+                    <td>
+                        <input type="text" value="5" name="slider[thumbnail_amount]">
+                    </td>
+                </tr>
+            </tbody></table> 
+            
+            <h4>Mobile Visiblity</h4>
+            <table class="form">
+                 <tbody><tr>
+                    <td>Hide Under Width</td>
+                    <td>
+                        <input type="text" value="" name="slider[hide_screen_width]">
+                    </td>
+                </tr>
+
+            </tbody></table> 
+            
+            
+
+        </div>
+      
+    </div></form>
+      <div class="clearfix"></div>
+
+
+      <div id="tab-importtools" style="display: none;">
+            <form method="post" enctype="multipart/form-data" action="http://localhost/admin/index.php?route=module/pavsliderlayer/import&token=6d88ac48fa2197331402304a0eeb329a">
+           
+         
+            <input type="file" class="input_import_slider" name="import_file">
+            
+            <input type="submit" value="Import Slider">
+            </form>
+       </div>   
+
+
+    </div>
+  </div>
+</div>
+ <script type="text/javascript">
+  $('#pavstores').bind('change', function () {
+      url = 'index.php?route=module/pavsliderlayer&token=6d88ac48fa2197331402304a0eeb329a';
+      var id = $(this).val();
+      if (id) {
+          url += '&store_id=' + encodeURIComponent(id);
+      }
+      window.location = url;
+  });
+
+    $("#btn-preview-ingroup").click( function(){
+        var url = $(this).attr("href");
+            $('#dialog').remove();
+            $('#content').prepend('<div id="dialog" style="padding: 3px 0px 0px 0px;"><iframe name="iframename2" src="'+url+'" style="padding:0; margin: 0; display: block; width: 100%; height: 100%;" frameborder="no" scrolling="auto"></iframe></div>');
+            $('#dialog').dialog({
+                title: 'Preview Management',
+                close: function (event, ui) {
+ 
+                },  
+                bgiframe: true,
+                width: 1000,
+                height: 500,
+                resizable: false,
+                modal: true
+        });  
+        return false; 
+    } );
+ </script>  
+    <script type="text/javascript">
+    
+        $(".htabs a").tabs();
+        $('#tabs-modules a').click( function(){
+            $.cookie("sactived_tab", $(this).attr("href") );
+        } );
+
+        if( $.cookie("sactived_tab") !="undefined" ){
+            $('#tabs-modules a').each( function(){ 
+                if( $(this).attr("href") ==  $.cookie("sactived_tab") ){
+                    $(this).click();
+                    return ;
+                }
+            } );
+            
+        }
+        
+        </script>
+
+
+   <script type="text/javascript"><!--
+var module_row = 1;
+
+function addModule() {  
+    html  = '<tbody id="module-row' + module_row + '">';
+    html += '  <tr>';
+    html += '    <td class="left"><select name="pavsliderlayer_module[' + module_row + '][group_id]">';
+        html += '      <option value="1">Fox slider</option>';
+        html += '    </select></td>';
+
+    html += '    <td class="left"><select name="pavsliderlayer_module[' + module_row + '][layout_id]">';
+        html += '      <option value="99999">All Page</option>';
+        html += '      <option value="6">Account</option>';
+        html += '      <option value="10">Affiliate</option>';
+        html += '      <option value="3">Category</option>';
+        html += '      <option value="7">Checkout</option>';
+        html += '      <option value="8">Contact</option>';
+        html += '      <option value="4">Default</option>';
+        html += '      <option value="1">Home</option>';
+        html += '      <option value="11">Information</option>';
+        html += '      <option value="5">Manufacturer</option>';
+        html += '      <option value="12">Pav Blog</option>';
+        html += '      <option value="15">Pavdeal</option>';
+        html += '      <option value="2">Product</option>';
+        html += '      <option value="14">Search</option>';
+        html += '      <option value="9">Sitemap</option>';
+        html += '      <option value="13">Specials</option>';
+        html += '    </select></td>';   
+    html += '    <td class="left"><select name="pavsliderlayer_module[' + module_row + '][position]">';
+    html += '      <option value="content_top">Content Top</option>';
+    html += '      <option value="content_bottom">Content Bottom</option>';
+    html += '      <option value="column_left">Column Left</option>';
+    html += '      <option value="column_right">Column Right</option>';
+    html += '      <option value="mainmenu">Main Menu</option>';
+    html += '      <option value="slideshow">Slideshow</option>';
+    html += '      <option value="promotion">Promotion</option>';
+    html += '      <option value="footer_top">Footer Top</option>';
+    html += '      <option value="footer_center">Footer Center</option>';
+    html += '      <option value="footer_bottom">Footer Bottom</option>';
+    
+    html += '    </select></td>';
+    html += '    <td class="left"><select name="pavsliderlayer_module[' + module_row + '][status]">';
+    html += '      <option value="1" selected="selected">Enabled</option>';
+    html += '      <option value="0">Disabled</option>';
+    html += '    </select></td>';
+    html += '    <td class="right"><input type="text" name="pavsliderlayer_module[' + module_row + '][sort_order]" value="" size="3" /></td>';
+    html += '    <td class="left"><a onclick="$(\'#module-row' + module_row + '\').remove();" class="button">Remove</a></td>';
+    html += '  </tr>';
+    html += '</tbody>';
+    
+    $('#module tfoot').before(html);
+    
+    module_row++;
+}
+//--></script>      
+</div>
+<div id="footer" style="display: none;"><a href="http://www.opencart.com/">OpenCart</a> © 2009-2014 All Rights Reserved.<br>Version 1.5.6.4</div>
+</body></html>
