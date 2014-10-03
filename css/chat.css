@@ -36,12 +36,6 @@ h6 {
     text-align: center;
 }
 
-.mondejour {
-    font-size: 55px;
-    font-weight: 300;
-    font-family:"HaloHandletter";
-}
-
 .intro-header {
     text-align: center;
     height:500px;
@@ -226,6 +220,13 @@ p.copyright {
 
 }
 
+.mailbox{
+}
+
+.mailbox i{
+  font-size:25px;
+}
+
 .network-name {
     text-transform: uppercase;
     font-size: 14px;
@@ -272,10 +273,10 @@ p.copyright {
 }
 
 .circle img {
+  margin-right;
   border: 2px solid rgba(0,0,0,0.4);
   border-radius: 50%;
 }
-
 a.circle {
   color: transparent;
 } /* IE fix: removes blue border */ 
@@ -336,17 +337,16 @@ a.circle {
     .tour-caption{
         margin-top:0px;
         margin-bottom:0px;
-        height: 52px;
     }
 }
 
 .thumbnail{
     float: left;
-    margin-left:20%;
-    margin-right:20%;
     background-color:transparent;
-    border-color: transparent;
-    width: 60%;
+    border:0px;
+    border-bottom: 1px solid #c2c2c2;
+    border-radius:0px;
+    width: 100%;
 }
 .thumbnail.right-caption > img{
     float: left;
@@ -404,7 +404,7 @@ a.circle {
     padding-bottom:30px;
 }
 
-.sidebar .price .bio{
+.bio{
     font-weight:400; 
     margin-bottom: 40px;
     margin-top: -10px;
@@ -415,10 +415,18 @@ a.circle {
 }
 
 /* chat */
-.chatheader{
-  padding-top: 100px;
+.box-header{
+  padding: 0 20px 50px 20px;
 }
-
+.chatheader{
+  padding: 100px 20px 20px 20px;
+}
+.chatheader > h1{
+  font-weight:400;
+}
+.chatbox{
+  padding:10px;
+}
 .box .chat {
   padding: 20px 20px 5px 10px;
 }
@@ -436,25 +444,24 @@ a.circle {
 .box .chat .item > img {
   width: 40px;
   height: 40px;
-  border: 2px solid transparent;
+  border: 2px solid rgba(0,0,0,0.4);
   -webkit-border-radius: 50% !important;
   -moz-border-radius: 50% !important;
   border-radius: 50% !important;
 }
-.box .chat .item > img.online {
-  border: 2px solid #00a65a;
-}
-.box .chat .item > img.offline {
-  border: 2px solid #f56954;
-}
 .box .chat .item > .message {
   margin-left: 55px;
   margin-top: -40px;
+  border: 1px solid #cbcbcb;
+  border-radius:2px;
+  padding:5px 15px 15px 15px;
 }
 .box .chat .item > .message > .name {
   display: block;
   font-weight: 600;
+  margin-bottom: 15px;
 }
+
 .box .chat .item > .attachment {
   -webkit-border-radius: 3px;
   -moz-border-radius: 3px;
