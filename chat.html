@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Traveneer - Local Guides and City Tours</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="css/profile.css" rel="stylesheet">
+    <!-- <link href="css/AdminLTE.css" rel="stylesheet" type="text/css" /> -->
+
+     <!-- bootstrap wysihtml5 - text editor -->
+        <link href="css/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css" rel="stylesheet" type="text/css" />
+     
+
+    <!-- Custom Fonts -->
+    <link href="font-awesome-4.1.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-default navbar-fixed-top navbar-btn" role="navigation">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <span>
+                    <a class="navbar-brand" href="index.html">Traveneer</a>
+                </span>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="#">Sign up</a>
+                    </li>
+                    <li>
+                        <a href="#">Login</a>
+                    </li>
+                    <li>
+                        <a href="#">How it works</a>
+                    </li>
+                    <li>
+                        <a href="#" class = "btn-lg btn-primary">Become a Local</a>
+                    </li>
+                </ul>
+
+                <div class="col-sm-3 col-md-3 pull-left">
+                    <form class="navbar-form" role="search">
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="Search" name="srch-term" id="srch-term" style= "width:300px; height: 40px;">
+                        <div class="input-group-btn">
+                            <button class="btn btn-default" type="submit" style= "height: 40px;"><i class="glyphicon glyphicon-search"></i></button>
+                        </div>
+                    </div>
+                    </form>
+                </div>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+
+        
+
+
+    <!-- Page Content -->
+
+
+        <div class="container">
+            <div class="chatheader" >
+                <h1> Conversation with Traveneer </h1>
+
+            </div>
+        <!-- /.container -->
+
+            <div class="row">
+                <div class="col-md-8">
+
+                    <div class="lead">
+                        <!-- Chat box -->
+                            <div class="box box-success">
+                                <div class="box-header">
+                                    <i class="fa fa-comments-o"></i>
+                                    <h3 class="box-title">Chat</h3>
+                                    <div class="box-tools pull-right" data-toggle="tooltip" title="Status">
+                                        
+                                    </div>
+                                    <!--<div class="box-footer">-->
+                                    <div class="input-group">
+                                        <input class="form-control" placeholder="Type message..."/>
+                                        <div class="input-group-btn">
+                                            <button class="btn btn-success"><i class="fa fa-plus"></i></button>
+                                        </div>
+                                    </div>
+                                    <!--</div>-->
+                                </div>
+                                <div class="box-body chat" id="chat-box">
+                                    
+                                    <!-- chat item -->
+                                    <div class="item">
+                                        <img src="img/avatar.png" alt="user image" class="online"/>
+                                        <p class="message">
+                                            <a href="#" class="name">
+                                                <small class="text-muted pull-right"><i class="fa fa-clock-o"></i> 2:15</small>
+                                                Mike Doe
+                                            </a>
+                                            I would like to meet you to discuss the latest news about
+                                            the arrival of the new theme. They say it is going to be one the
+                                            best themes on the market
+                                        </p>
+                                        <div class="attachment">
+                                            <h4>Attachments:</h4>
+                                            <p class="filename">
+                                                Theme-thumbnail-image.jpg
+                                            </p>
+                                            <div class="pull-right">
+                                                <button class="btn btn-primary btn-sm btn-flat">Open</button>
+                                            </div>
+                                        </div><!-- /.attachment -->
+                                    </div><!-- /.item -->
+                                    <!-- chat item -->
+                                    <div class="item">
+                                        <img src="img/avatar2.png" alt="user image" class="offline"/>
+                                        <p class="message">
+                                            <a href="#" class="name">
+                                                <small class="text-muted pull-right"><i class="fa fa-clock-o"></i> 5:15</small>
+                                                Jane Doe
+                                            </a>
+                                            I would like to meet you to discuss the latest news about
+                                            the arrival of the new theme. They say it is going to be one the
+                                            best themes on the market
+                                        </p>
+                                    </div><!-- /.item -->
+                                    <!-- chat item -->
+                                    <div class="item">
+                                        <img src="img/avatar3.png" alt="user image" class="offline"/>
+                                        <p class="message">
+                                            <a href="#" class="name">
+                                                <small class="text-muted pull-right"><i class="fa fa-clock-o"></i> 5:30</small>
+                                                Susan Doe
+                                            </a>
+                                            I would like to meet you to discuss the latest news about
+                                            the arrival of the new theme. They say it is going to be one the
+                                            best themes on the market
+                                        </p>
+                                    </div><!-- /.item -->
+                                </div><!-- /.chat -->
+                                
+                            </div><!-- /.box (chat box) --> 
+                    </div>
+                </div>
+
+                <div class="col-md-4"> 
+                    <div class="sidebar">
+                        <div class="price text-center">
+                            <h1>sidebar</h1>
+                            <h5 class="bio">average price of tours per head</h5>
+                            <a href="#" class = "btn-lg btn-success" style="padding:13px; width:100%">Agree</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <!-- /.container -->
+
+
+    </div>
+
+        <footer class="banner">
+
+        <div class="container">
+
+            <div class="row">
+                <div class="col-sm-3 col-md-3">
+                    <span class="traveneer" style="margin-top:-20px">Traveneer</span>
+                    <p class="copyright text-muted small">Copyright &copy; 2014. <br>All Rights Reserved</p>
+                </div>
+                
+            </div>
+
+        </div>
+        <!-- /.container -->
+
+    </footer>
+        <!-- /.container -->
+
+    </div>
+    <!-- /.banner -->
+
+    <!-- jQuery Version 1.11.0 -->
+    <script src="js/jquery-1.11.0.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
+</body>
+
+</html>
