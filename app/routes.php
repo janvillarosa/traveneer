@@ -13,5 +13,25 @@
 
 Route::get('/', function()
 {
-	return View::make('hello');
+    return View::make('frontpage');
+});
+
+Route::get('/chat', function()
+{
+    return View::make('chat');
+});
+
+Route::get('/mailbox', function()
+{
+    return View::make('mailbox');
+});
+
+Route::get('/profile', function()
+{
+    return View::make('profile');
+});
+
+Route::get('/searchresult', function()
+{
+    return View::make('searchresult');
 });
